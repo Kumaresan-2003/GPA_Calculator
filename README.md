@@ -6,3 +6,5 @@ Frontend: Built using HTML, CSS, and JavaScript, focusing on DOM manipulation fo
 Features:
 Users can input their grades, and the system automatically calculates the GPA.
 The future enhancement includes adding authentication to store user data securely.
+![Screenshot 2025-02-13 103635](https://github.com/user-attachments/assets/92aec4ee-7774-47a3-9c57-0218c2f5723a)
+
