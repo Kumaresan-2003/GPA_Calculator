@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="LoginPage.css">
+</head>
+<body>
+    <form id="loginForm">
+        <h1>Login</h1>
+        <div class="error" id="error"></div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username">
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password">
+        
+        <button type="submit">Login</button>
+    </form>
+
+    <script>
+        // Form Validation Script
+        const loginForm = document.getElementById('loginForm');
+        const errorDiv = document.getElementById('error');
+        
+        loginForm.addEventListener('submit', function (event) {
+            // Prevent form submission
+            event.preventDefault();
+
+            // Clear previous errors
+            errorDiv.textContent = '';
+
+            // Get input values
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            let errors = [];
+
+            // Validation logic
+            if (!username) {
+                errors.push("Username is required.");
+            }
+
+            if (!password) {
+                errors.push("Password is required.");
+            } else if (password.length < 6) {
+                errors.push("Password must be at least 6 characters long.");
+            }
+    
+            // Display errors or submit form
+            if (errors.length > 0) {
+                errorDiv.textContent = errors.join(' ');
+            } else {
+                // Redirect to landing page or process login
+                alert("Login successful!");
+                window.location.href = './Traverse.html';
+            }
+        });
+    </script>
+</body>
+</html>

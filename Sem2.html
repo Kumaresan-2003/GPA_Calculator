@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Semester 2 GPA Calculator</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        form {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 90%;
+            max-width: 600px;
+        }
+
+        h3 {
+            text-align: center;
+            margin: 5px 0;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="button"] {
+            margin-top: 15px;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="button"]:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e0f7fa;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h3>Semester 2 - GPA Calculator</h3>
+
+        <label for="sub1">HS3252 Professional English - II</label>
+        <select id="sub1">
+            <option value="O">O</option>
+            <option value="A+">A+</option>
+            <option value="A">A</option>
+            <option value="B+">B+</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="fail">Fail</option>
+        </select>
+
+        <label for="sub2">MA3251 Statistics and Numerical Methods</label>
+        <select id="sub2">
+            <option value="O">O</option>
+            <option value="A+">A+</option>
+            <option value="A">A</option>
+            <option value="B+">B+</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="fail">Fail</option>
+        </select>
+
+        <label for="sub3">PH3256 Physics for Information Science</label>
+        <select id="sub3">
+            <option value="O">O</option>
+            <option value="A+">A+</option>
+            <option value="A">A</option>
+            <option value="B+">B+</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="fail">Fail</option>
+        </select>
+
+        <label for="sub4">BE3251 Basic Electrical and Electronics Engineering</label>
+        <select id="sub4">
+            <option value="O">O</option>
+            <option value="A+">A+</option>
+            <option value="A">A</option>
+            <option value="B+">B+</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="fail">Fail</option>
+        </select>
+
+        <label for="sub5">GE3251 Engineering Graphics</label>
+        <select id="sub5">
+            <option value="O">O</option>
+            <option value="A+">A+</option>
+            <option value="A">A</option>
+            <option value="B+">B+</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="fail">Fail</option>
+        </select>
+
+        <label for="sub6">CS3251 Programming in C</label>
+        <select id="sub6">
+            <option value="O">O</option>
+            <option value="A+">A+</option>
+            <option value="A">A</option>
+            <option value="B+">B+</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="fail">Fail</option>
+        </select>
+
+        <label for="sub7">GE3252 Tamils and Technology</label>
+        <select id="sub7">
+            <option value="O">O</option>
+            <option value="A+">A+</option>
+            <option value="A">A</option>
+            <option value="B+">B+</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="fail">Fail</option>
+        </select>
+
+        <label for="sub8">NCC Credit Course Level 1</label>
+        <select id="sub8">
+            <option value="O">O</option>
+            <option value="A+">A+</option>
+            <option value="A">A</option>
+            <option value="B+">B+</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="fail">Fail</option>
+        </select>
+
+        <label for="sub9">GE3271 Engineering Practices Laboratory</label>
+        <select id="sub9">
+            <option value="O">O</option>
+            <option value="A+">A+</option>
+            <option value="A">A</option>
+            <option value="B+">B+</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="fail">Fail</option>
+        </select>
+
+        <label for="sub10">CS3271 Programming in C Laboratory</label>
+        <select id="sub10">
+            <option value="O">O</option>
+            <option value="A+">A+</option>
+            <option value="A">A</option>
+            <option value="B+">B+</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="fail">Fail</option>
+        </select>
+
+        <input type="button" value="Calculate GPA" onclick="calculateGPA()">
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function calculateGPA() {
+            const gradeValues = {
+                "O": 10, "A+": 9, "A": 8, "B+": 7, "B": 6, "C": 5, "fail": 0
+            };
+
+            const credits = [2, 4, 3, 3, 4, 3, 1, 2, 2, 2];
+            let totalCredits = 0;
+            let totalPoints = 0;
+
+            for (let i = 1; i <= 10; i++) {
+                let grade = document.getElementById("sub" + i).value;
+                totalPoints += gradeValues[grade] * credits[i - 1];
+                totalCredits += credits[i - 1];
+            }
+
+            const gpa = totalPoints / totalCredits;
+            document.getElementById("result").innerHTML = `<strong>Your GPA is: ${gpa.toFixed(2)}</strong>`;
+        }
+    </script>
+</body>
+</html>

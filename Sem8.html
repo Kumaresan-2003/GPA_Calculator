@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Semester 8 GPA Calculator</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        form {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 90%;
+            max-width: 600px;
+        }
+
+        fieldset {
+            border: none;
+            padding: 0;
+        }
+
+        h3, h4, h5 {
+            text-align: center;
+            margin: 5px 0;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="button"] {
+            margin-top: 15px;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="button"]:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e0f7fa;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-size: 18px;
+        }
+
+        @media (max-width: 600px) {
+            form {
+                padding: 15px;
+            }
+
+            input[type="button"] {
+                font-size: 14px;
+            }
+
+            #result {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <h3>Regulation 2021</h3>
+            <h4>Affiliated to Anna University</h4>
+            <h5>IT Department Sem 8</h5>
+
+            <!-- Add subjects for Semester 8 here -->
+            
+            <label for="sub_project">IT3811 Project Work/Internship</label>
+            <select id="sub_project">
+                <option value="O">O</option>
+                <option value="A+">A+</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="fail">Fail</option>
+            </select>
+
+            <input type="button" value="Calculate GPA" onclick="calculateGPA()">
+        </fieldset>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        function calculateGPA() {
+            const gradeValues = {
+                "O": 10,
+                "A+": 9,
+                "A": 8,
+                "B+": 7,
+                "B": 6,
+                "C": 5,
+                "fail": 0,
+            };
+
+            // Credits for subjects (adjust as per your actual subjects)
+            const credits = [20];  // Adjust credits accordingly
+            const subjects = ["sub_project"];
+            let totalGradePoints = 0;
+            let totalCredits = 0;
+
+            for (let i = 0; i < subjects.length; i++) {
+                const grade = document.getElementById(subjects[i]).value;
+                totalGradePoints += credits[i] * gradeValues[grade];
+                totalCredits += credits[i];
+            }
+
+            const gpa = totalGradePoints / totalCredits;
+            document.getElementById("result").innerHTML = `<strong>Your GPA is: ${gpa.toFixed(2)}</strong>`;
+        }
+    </script>
+</body>
+</html>
